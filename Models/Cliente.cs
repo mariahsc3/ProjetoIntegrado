@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APILojas.Models
 {
     public class Cliente
     {
         [Key]
-        [StringLength(5, MinimumLength = 1)]
-        public string Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         [StringLength(30, MinimumLength = 5, ErrorMessage = "O campo E-mail deve ter entre 5 e 30 caracteres")]
         public string Email { get; set; }

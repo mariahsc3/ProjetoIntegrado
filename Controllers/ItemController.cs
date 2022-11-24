@@ -12,46 +12,46 @@ namespace APILojas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class ItemController : ControllerBase
     {
         private readonly APIDbContext _context;
 
-        public ClienteController(APIDbContext context)
+        public ItemController(APIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Clientes
+        // GET: api/Items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetCliente()
+        public async Task<ActionResult<IEnumerable<Item>>> GetItem()
         {
-            return await _context.Cliente.ToListAsync();
+            return await _context.Item.ToListAsync();
         }
 
-        // GET: api/Clientes/5
+        // GET: api/Items/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cliente>> GetCliente(int id)
+        public async Task<ActionResult<Item>> GetItem(int id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
+            var item = await _context.Item.FindAsync(id);
 
-            if (cliente == null)
+            if (item == null)
             {
                 return NotFound();
             }
 
-            return cliente;
+            return item;
         }
 
-        // PUT: api/Clientes/5
+        // PUT: api/Items/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCliente(int id, Cliente cliente)
+        public async Task<IActionResult> PutItem(int id, Item item)
         {
-            if (id != cliente.Id)
+            if (id != item.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(cliente).State = EntityState.Modified;
+            _context.Entry(item).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace APILojas.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClienteExists(id))
+                if (!ItemExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +72,35 @@ namespace APILojas.Controllers
             return NoContent();
         }
 
-        // POST: api/Clientes
+        // POST: api/Items
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
+        public async Task<ActionResult<Item>> PostItem(Item item)
         {
-            _context.Cliente.Add(cliente);
+            _context.Item.Add(item);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCliente", new { id = cliente.Id }, cliente);
+            return CreatedAtAction("GetItem", new { id = item.Id }, item);
         }
 
-        // DELETE: api/Clientes/5
+        // DELETE: api/Items/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCliente(int id)
+        public async Task<IActionResult> DeleteItem(int id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
-            if (cliente == null)
+            var item = await _context.Item.FindAsync(id);
+            if (item == null)
             {
                 return NotFound();
             }
 
-            _context.Cliente.Remove(cliente);
+            _context.Item.Remove(item);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ClienteExists(int id)
+        private bool ItemExists(int id)
         {
-            return _context.Cliente.Any(e => e.Id == id);
+            return _context.Item.Any(e => e.Id == id);
         }
     }
 }

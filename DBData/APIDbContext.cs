@@ -12,5 +12,9 @@ namespace APILojas.DBData
         }
 
         public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<EntradaSaida> EntradaSaida { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
+        public DbSet<Item> Item { get; set; }
+        public DbSet<Loja> Loja { get; set; }
     }
 }

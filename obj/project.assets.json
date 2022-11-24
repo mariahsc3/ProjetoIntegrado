@@ -10348,11 +10348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Will\\Documents\\ProjetoIntegrado\\APILojas.csproj",
+      "projectUniqueName": "C:\\Users\\Will\\Desktop\\ProjetoIntegrado-main\\APILojas.csproj",
       "projectName": "APILojas",
-      "projectPath": "C:\\Users\\Will\\Documents\\ProjetoIntegrado\\APILojas.csproj",
+      "projectPath": "C:\\Users\\Will\\Desktop\\ProjetoIntegrado-main\\APILojas.csproj",
       "packagesPath": "C:\\Users\\Will\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Will\\Documents\\ProjetoIntegrado\\obj\\",
+      "outputPath": "C:\\Users\\Will\\Desktop\\ProjetoIntegrado-main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Will\\AppData\\Roaming\\NuGet\\NuGet.Config",

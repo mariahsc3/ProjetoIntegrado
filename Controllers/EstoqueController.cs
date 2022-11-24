@@ -12,46 +12,46 @@ namespace APILojas.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase
+    public class EstoqueController : ControllerBase
     {
         private readonly APIDbContext _context;
 
-        public ClienteController(APIDbContext context)
+        public EstoqueController(APIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Clientes
+        // GET: api/Estoques
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> GetCliente()
+        public async Task<ActionResult<IEnumerable<Estoque>>> GetEstoque()
         {
-            return await _context.Cliente.ToListAsync();
+            return await _context.Estoque.ToListAsync();
         }
 
-        // GET: api/Clientes/5
+        // GET: api/Estoques/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cliente>> GetCliente(int id)
+        public async Task<ActionResult<Estoque>> GetEstoque(int id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
+            var estoque = await _context.Estoque.FindAsync(id);
 
-            if (cliente == null)
+            if (estoque == null)
             {
                 return NotFound();
             }
 
-            return cliente;
+            return estoque;
         }
 
-        // PUT: api/Clientes/5
+        // PUT: api/Estoques/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCliente(int id, Cliente cliente)
+        public async Task<IActionResult> PutEstoque(int id, Estoque estoque)
         {
-            if (id != cliente.Id)
+            if (id != estoque.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(cliente).State = EntityState.Modified;
+            _context.Entry(estoque).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace APILojas.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClienteExists(id))
+                if (!EstoqueExists(id))
                 {
                     return NotFound();
                 }
@@ -72,35 +72,35 @@ namespace APILojas.Controllers
             return NoContent();
         }
 
-        // POST: api/Clientes
+        // POST: api/Estoques
         [HttpPost]
-        public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
+        public async Task<ActionResult<Estoque>> PostEstoque(Estoque estoque)
         {
-            _context.Cliente.Add(cliente);
+            _context.Estoque.Add(estoque);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCliente", new { id = cliente.Id }, cliente);
+            return CreatedAtAction("GetEstoque", new { id = estoque.Id }, estoque);
         }
 
-        // DELETE: api/Clientes/5
+        // DELETE: api/Estoques/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCliente(int id)
+        public async Task<IActionResult> DeleteEstoque(int id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
-            if (cliente == null)
+            var estoque = await _context.Estoque.FindAsync(id);
+            if (estoque == null)
             {
                 return NotFound();
             }
 
-            _context.Cliente.Remove(cliente);
+            _context.Estoque.Remove(estoque);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ClienteExists(int id)
+        private bool EstoqueExists(int id)
         {
-            return _context.Cliente.Any(e => e.Id == id);
+            return _context.Estoque.Any(e => e.Id == id);
         }
     }
 }

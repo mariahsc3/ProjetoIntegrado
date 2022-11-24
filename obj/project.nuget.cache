@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zX1iC79PhFtjGZBZEpM7J/80tOANUts2wXWrQYeh435XZZax1wu5Bh0w8ZNJEzX3OlOYm1UqPt3nZQ5ytZJzBg==",
+  "dgSpecHash": "Dasm7deC1heJm88tvm5OXRGu1FOtxuApT7jkVn7sD6TCoIaqFN7IePFa2tsVlMwdu3TEGkBMDJS9QzCPxVSyaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Will\\Documents\\ProjetoIntegrado\\APILojas.csproj",
+  "projectFilePath": "C:\\Users\\Will\\Desktop\\ProjetoIntegrado-main\\APILojas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Will\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Will\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
